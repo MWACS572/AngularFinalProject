@@ -21,14 +21,14 @@ import {AuthService} from "../../services/auth.service";
         <th>Category</th>
         <th>Type Of Work</th>
         <th>Date of Work</th>
-        <th>Address</th>
+       <!-- <th>Address</th>-->
         <th>Details</th>
       </tr>
       <tr *ngFor="let post of posts">
         <td>{{post.category}}</td>
         <td id="{{post._id}}">{{post.name}}</td>
         <td>{{post.preferedDate | date:'medium'}}</td>
-        <td>{{post.location}}</td>
+      <!--  <td>{{post.location}}</td>-->
         <td><a [routerLink]="['postdetail',post._id]">Show Details</a></td>
       </tr>
     </table>

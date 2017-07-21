@@ -42,11 +42,21 @@ export class DataService {
 
   //Ermias's
 
-  getPosts(email) {
-    //console.log("http://localhost:5001/api/posts/"+email);
-    var posts = this.authHttp.get("http://localhost:5001/api/posts/" + email).map(res => res.json());
+  // getPosts(email) {
+  //   //console.log("http://localhost:5001/api/posts/"+email);
+  //   var posts = this.authHttp.get("http://localhost:5001/api/posts/" + email).map(res => res.json());
+  //
+  //   return posts
+  // }
+  data1;
+  getpostByLocation(lat,long,email){
 
-    return posts
+    this.data1= { "lat":lat,
+      "long":long,
+      "email":email }
+
+    return this.authHttp.post("http://localhost:5001/api/posts",this.data1).map(res=>res.json())
+
   }
 
   getPostsByFee(email) {
